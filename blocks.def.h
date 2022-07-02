@@ -1,11 +1,17 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
+
+#include "themes/uwu.h"
+
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	{"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
-
-	{"", "date '+%b %d (%a) %I:%M%p'",					5,		0},
+	{"",                                 "~/.scripts/status/cpu",                                        30,      1},
+	{"",                                 "~/.scripts/status/memory",                                     30,      2},
+	{"",                                 "~/.scripts/status/network",                                    30,      3},
+	{"",                                 "~/.scripts/status/clock",                                      30,      4},
+//      {"",                                 "~/.scripts/status/",                                           30,      5},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
 static char delim[] = " | ";
-static unsigned int delimLen = 5;
+static unsigned int delimLen = 3;
+
